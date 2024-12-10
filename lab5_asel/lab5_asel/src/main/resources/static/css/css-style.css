@@ -1,0 +1,461 @@
+@import url('https://fonts.googleapis.com/css?family=Varela+Round');
+
+body {
+    background-color: #FFFFF0; /* Темно-серый фон */
+    color: #A52A2A; /* Белый текст для удобства чтения */
+    font-family: 'Varela Round', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+.header {
+    background-color: #800000;
+    display: flex;
+    justify-content: flex-end;
+    box-shadow: none;
+    overflow: hidden;
+    padding: 10px 0;
+}
+
+.header a {
+    color: #f8f2da;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 17px;
+    transition: all 0.3s;
+    margin: 0 10px;
+    border: 2px solid transparent;
+    border-radius: 5px;
+}
+
+.header a:hover {
+    background-color: #f8f2da;
+    color: #23232d;
+    border-color: #f8f2da;
+}
+
+.header a.active {
+    background-color: #f8f2da; /* Выделение активной ссылки */
+    color: #23232d;
+    border-color: transparent;
+}
+
+
+.topnav a.logout-btn {
+    background-color: red; /* Red background for logout */
+    color: white; /* White text */
+    border: 2px solid darkred; /* Dark red border */
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 17px;
+    border-radius: 5px;
+    margin: 0 10px;
+    transition: all 0.3s;
+}
+
+.topnav a.logout-btn:hover {
+    background-color: darkred; /* Darker red on hover */
+    color: white; /* Keep white text */
+    border-color: red; /* Swap border color */
+}
+
+
+
+
+.container {
+    color: #A52A2A;
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+
+/* Profile photo styling */
+.profile-photo img {
+    border-radius: 50%; /* Circular image */
+    border: 4px solid #f8f2da; /* White border around image */
+    margin-bottom: 20px; /* Spacing below the photo */
+}
+
+
+
+
+/* Styling headers and content */
+h3 {
+    color: #A52A2A;
+    margin: 10px 0;
+}
+
+p {
+    color: #A52A2A;
+    font-size: 18px;
+    margin: 5px 0;
+}
+
+/* Button styling */
+.btn-primary {
+    background-color: #3a3a4d; /* Base color */
+    color: #f8f2da; /* White text */
+    border: 2px solid #f8f2da; /* White border */
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    text-decoration: none; /* Remove underline */
+    display: inline-block;
+    margin-top: 20px; /* Add spacing above the button */
+    transition: all 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #f8f2da; /* White background */
+    color: #3a3a4d; /* Base text color */
+    border-color: #3a3a4d; /* Dark border */
+}
+
+
+
+table {
+    width: 100%;
+    margin: 0 auto; /* Автоматическое выравнивание слева и справа */
+
+    border-collapse: collapse;
+    font-size: 18px;
+    text-align: center;
+    background-color: #800000;
+    color: #f8f2da;
+    border: 2px solid #f8f2da; /* Белая рамка */
+
+    justify-content: center;
+    align-items: center;
+}
+
+table th, table td {
+    border: 1px solid #f8f2da;
+    padding: 12px;
+    text-align: center;
+    word-wrap: break-word;
+}
+
+table th {
+    background-color: #f8f2da;
+    color: #2b2b35; /
+}
+
+table tr:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Легкий эффект наведения */
+}
+
+button, .btn {
+    background-color: #800000;
+    color: #f8f2da;
+    border: 2px solid #f8f2da;
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    display: inline-block;
+    margin: 5px;
+    transition: all 0.3s;
+}
+
+button:hover, .btn:hover {
+    background-color: #f8f2da; /* Белый фон при наведении */
+    color: #800000;
+    border-color: #2b2b35;
+}
+
+.actions a {
+    background-color: #2b2b35;
+    color: #f8f2da;
+    padding: 10px 15px;
+    border: 2px solid #f8f2da;
+    border-radius: 5px;
+    margin: 5px;
+    display: inline-block;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.actions a:hover {
+    background-color: #f8f2da;
+    color: #2b2b35;
+    border-color: #2b2b35;
+}
+
+form {
+    text-align: center;
+    background-color: #800000;
+    color: #f8f2da;
+    padding: 20px;
+    border-radius: 8px;
+    border: 2px solid #f8f2da;
+    max-width: 400px;
+    margin: 20px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+form label {
+    color: #f8f2da;
+}
+
+form input, form select, form textarea {
+    background-color: #A52A2A;
+    color: #f8f2da;
+    border: 1px solid #f8f2da;
+    padding: 8px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+}
+
+form button {
+    background-color: #A52A2A;
+    color: #f8f2da;
+    border: 2px solid #f8f2da;
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+form button:hover {
+    background-color: #f8f2da;
+    color: #A52A2A;
+    border-color: #A52A2A;
+}
+
+
+/*ekm*/
+table {
+    margin: 20px 0;
+}
+
+
+/* Optional: Center headers within a container, if needed */
+.header-container {
+    display: flex;
+    justify-content: center;  /* Horizontally centers */
+    align-items: center;      /* Vertically centers */
+    /*height: 100vh;            !* Full viewport height *!*/
+}
+
+
+
+
+
+h1 {
+    text-align: center;
+    color: #A52A2A;
+    margin: 20px 0;
+}
+
+.error {
+    color: red;
+}
+
+@media (max-width: 768px) {
+    table {
+        font-size: 14px;
+    }
+
+    table, table th, table td {
+        display: block;
+        width: 100%;
+        text-align: left;
+    }
+
+    table th, table td {
+        padding: 10px;
+        border: none;
+    }
+}
+
+
+
+
+.pagination {
+    display: flex;
+    justify-content: center; /* Center align pagination */
+    margin: 20px 0;
+    list-style: none; /* Remove bullets */
+    padding: 0;
+}
+
+.pagination li {
+    margin: 0 5px;
+}
+
+.pagination a {
+    background-color: #3a3a4d;
+    color: #f8f2da;
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 16px;
+    border: 2px solid #f8f2da;
+    border-radius: 5px;
+    transition: all 0.3s;
+}
+
+.pagination a:hover {
+    background-color: #f8f2da;
+    color: #3a3a4d;
+    border-color: #3a3a4d;
+}
+
+.pagination .active a {
+    background-color: #f8f2da;
+    color: #3a3a4d;
+    pointer-events: none;
+}
+
+@media (max-width: 768px) {
+    .search-bar {
+        flex-direction: column; /* Stack input and button */
+    }
+
+    .search-bar input[type="text"] {
+        border-radius: 5px 5px 0 0; /* Rounded for top */
+    }
+
+    .search-bar button {
+        border-radius: 0 0 5px 5px; /* Rounded for bottom */
+        margin-top: -2px; /* Fix spacing overlap */
+    }
+
+    .pagination {
+        flex-wrap: wrap; /* Allow pagination to wrap */
+    }
+
+    .pagination li {
+        margin: 5px 0; /* Add vertical spacing */
+    }
+}
+
+
+/*MENU*/
+.main {
+    margin: 0 auto;
+    display: block;
+    height: 100%;
+    margin-top: 60px;
+}
+.mainInner{
+    display: table;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+}
+.mainInner div{
+    display:table-cell;
+    vertical-align: middle;
+    font-size: 3em;
+    font-weight: bold;
+    letter-spacing: 1.25px;
+}
+#sidebarMenu {
+    height: 100%;
+    position: fixed;
+    left: 0;
+    width: 250px;
+    margin-top: 0;
+    transform: translateX(-250px);
+    transition: transform 250ms ease-in-out;
+    background: linear-gradient(180deg, #FC466B 0%, #3F5EFB 100%);
+}
+
+.sidebarMenuInner{
+    margin:0;
+    padding:0;
+    border-top: 1px solid rgba(255, 255, 255, 0.10);
+}
+
+.sidebarMenuInner li{
+    list-style: none;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 20px;
+    cursor: pointer;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+}
+
+.sidebarMenuInner li a{
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+}
+input[type="checkbox"]:checked ~ #sidebarMenu {
+    transform: translateX(0);
+}
+
+input[type=checkbox] {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    display: none;
+}
+.sidebarIconToggle {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    cursor: pointer;
+    position: absolute;
+    z-index: 99;
+    height: 100%;
+    width: 100%;
+    top: 22px;
+    left: 15px;
+    height: 22px;
+    width: 22px;
+}
+.spinner {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background-color: #fff;
+}
+.horizontal {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    position: relative;
+    float: left;
+    margin-top: 3px;
+}
+.diagonal.part-1 {
+    position: relative;
+    transition: all 0.3s;
+    box-sizing: border-box;
+    float: left;
+}
+.diagonal.part-2 {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    position: relative;
+    float: left;
+    margin-top: 3px;
+}
+input[type=checkbox]:checked ~ .sidebarIconToggle > .horizontal {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    opacity: 0;
+}
+input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-1 {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    transform: rotate(135deg);
+    margin-top: 8px;
+}
+input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    transform: rotate(-135deg);
+    margin-top: -9px;
+}

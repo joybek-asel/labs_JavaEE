@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="ISO-8859-1">
+  <title>View Task</title>
+  <link rel="stylesheet" th:href="@{/css/css-style.css}">
+</head>
+<body>
+
+
+
+
+<div class="header">
+  <a class="active" th:href="@{/main-page}">Home</a>
+  <a th:href="@{/login}">Log Out</a>
+</div>
+<input type="checkbox" class="openSidebarMenu" id="openSidebarMenu">
+<label for="openSidebarMenu" class="sidebarIconToggle">
+  <div class="spinner diagonal part-1"></div>
+  <div class="spinner horizontal"></div>
+  <div class="spinner diagonal part-2"></div>
+</label>
+<div id="sidebarMenu">
+  <ul class="sidebarMenuInner">
+    <li><a th:href = "@{/users}" >Users</a></li>
+    <li><a th:href = "@{/tasks}" >Tasks</a></li>
+    <li><a th:href = "@{/categories}" >Categories</a></li>
+    <li><a th:href="@{/showFormForUpdate/{id}(id=${user.userId})}">Update my account</a></li>
+  </ul>
+</div>
+<div id='center' class="main center"></div>
+
+
+
+
+
+
+<div class="container">
+
+  <div class="header-container">
+    <h1>Task Details</h1>
+  </div>
+  <hr>
+
+  <div class="row">
+    <div class="col-md-6">
+      <h3>Title:</h3>
+      <p th:text="${task.title}"></p>
+    </div>
+
+    <div class="col-md-6">
+      <h3>Description:</h3>
+      <p th:text="${task.description}"></p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <h3>Due Date:</h3>
+      <p th:text="${task.dueDate}"></p>
+    </div>
+
+    <div class="col-md-6">
+      <h3>Priority:</h3>
+      <p th:text="${task?.priority}"></p>
+    </div>
+  </div>
+
+  <div class="col-md-6">
+    <h3>Status:</h3>
+    <p th:text="${task?.status}"></p>
+  </div>
+</div>
+
+<div class="row">
+  <h3>Category:</h3>
+  <p th:text="${task?.category?.name}"></p>
+</div>
+
+<div class="row">
+  <h3>User:</h3>
+  <p th:text="${task?.user?.username}"></p>
+</div>
+
+<div class="my-3">
+  <a th:href="@{/tasks}" class="btn btn-primary">Back to Task List</a>
+</div>
+</div>
+</body>
+</html>

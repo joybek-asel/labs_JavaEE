@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Tasks Management System</title>
+
+    <link rel="stylesheet" th:href="@{/css/css-style.css}">
+</head>
+<body>
+<div class="header">
+    <a class="active" th:href="@{/main-page}">Home</a>
+    <a th:href="@{/viewProfile/{id}(id=${user.userId})}">MyProfile</a>
+    <a th:href="@{/login}">Log Out</a>
+</div>
+
+
+<input type="checkbox" class="openSidebarMenu" id="openSidebarMenu">
+<label for="openSidebarMenu" class="sidebarIconToggle">
+    <div class="spinner diagonal part-1"></div>
+    <div class="spinner horizontal"></div>
+    <div class="spinner diagonal part-2"></div>
+</label>
+<div id="sidebarMenu">
+    <ul class="sidebarMenuInner">
+        <li><a th:href = "@{/users}"  >Users List</a></li>
+        <li><a th:href = "@{/tasks}"  >Tasks List</a></li>
+        <li><a th:href = "@{/categories}"  >Categories List</a></li>
+        <li><a th:href="@{/showFormForUpdate/{id}(id=${user.userId})}">Update my account</a></li>
+    </ul>
+</div>
+<div id='center' class="main center"></div>
+
+
+<div class="container">
+
+    <div class="header-container">
+        <h1>Task Management System</h1>
+    </div>
+
+    <hr>
+    <h2> Save Task</h2>
+
+    <form action="#" th:action="@{/saveTask}" th:object="${task}" method="POST">
+        <input type="text" th:field="*{title}" placeholder="Title" class="form-control mb-4 col-4">
+
+        <br>
+        <input type="text" th:field="*{description}" placeholder="Description" class="form-control mb-4 col-4">
+
+        <br>
+        <label for="task-due-date">Due Date:</label>
+        <input type="date" th:field="${task.dueDate}" id="task-due-date"/>
+
+        <br>
+        <label for="task-priority">Priority:</label>
+        <select id="task-priority" th:field="*{priority}">
+            <option value="low" th:text="'Low'">Low</option>
+            <option value="medium" th:text="'Medium'">Medium</option>
+            <option value="high" th:text="'High'">High</option>
+        </select>
+
+
+        <br>
+        <label for="task-status">Status:</label>
+        <select id="task-status" th:field="*{status}">
+            <option value="in process" th:text="'In Process'">In Process</option>
+            <option value="done" th:text="'Done'">Done</option>
+        </select>
+
+        <br>
+        <label for="task-category">Category:</label>
+        <select id="task-category" th:field="*{category}">
+            <th:block th:each="category : ${categories}">
+                <option th:value="${category.categoryId}" th:text="${category.name}"></option>
+            </th:block>
+        </select>
+
+        <br>
+        <button type="submit" class="btn btn-info col-2"> Save Task </button>
+    </form>
+</div>
+
+<script>
+    const dueDateInput = document.getElementById("task-due-date");
+    dueDateInput.addEventListener("input", function () {
+        const today = new Date().toISOString().split("T")[0];
+        if (this.value < today) {
+            alert("Due date must not be in the past.");
+            this.value = today;
+        }
+    });
+</script>
+
+
+</body>
+</html>

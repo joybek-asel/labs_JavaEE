@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="ISO-8859-1">
+  <title>Category Management System</title>
+  <link rel="stylesheet" th:href="@{/css/css-style.css}">
+</head>
+<body>
+
+
+
+<div class="header">
+  <a class="active" th:href="@{/main-page}">Home</a>
+  <a th:href="@{/viewProfile/{id}(id=${user.userId})}">MyProfile</a>
+  <a th:href="@{/login}">Log Out</a>
+</div>
+<input type="checkbox" class="openSidebarMenu" id="openSidebarMenu">
+<label for="openSidebarMenu" class="sidebarIconToggle">
+  <div class="spinner diagonal part-1"></div>
+  <div class="spinner horizontal"></div>
+  <div class="spinner diagonal part-2"></div>
+</label>
+<div id="sidebarMenu">
+  <ul class="sidebarMenuInner">
+    <li><a th:href = "@{/users}" >Users</a></li>
+    <li><a th:href = "@{/tasks}" >Tasks</a></li>
+    <li><a th:href = "@{/categories}" >Categories</a></li>
+    <li><a th:href="@{/showFormForUpdate/{id}(id=${user.userId})}">Update my account</a></li>
+  </ul>
+</div>
+<div id='center' class="main center"></div>
+
+
+
+
+
+
+<div class="container">
+  <div class="header-container">
+    <h1>Category Management System</h1>
+  </div>
+  <hr>
+  <h2>Update Category</h2>
+
+  <form action="#" th:action="@{/saveCategory}" th:object="${category}" method="POST">
+    <input type="hidden" th:field="*{categoryId}" />
+    <input type="text" th:field="*{name}" placeholder="Name" class="form-control mb-4 col-4">
+
+    <br>
+    <input type="text" th:field="*{description}" placeholder="Description" class="form-control mb-4 col-4">
+
+    <br>
+    <button type="submit" class="btn btn-info col-2"> Update Category </button>
+  </form>
+</div>
+</body>
+</html>
